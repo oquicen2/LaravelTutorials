@@ -23,6 +23,9 @@
           <a class="nav-link active" href="{{ route('product.create') }}">Create product</a>
           <a class="nav-link active" href="{{ route('home.about') }}">About</a>
           <a class="nav-link active" href="{{ route('home.contact') }}">Contact</a>
+          <a class="nav-link active" href="{{ route('parcial1.registerFish') }}">Registrar peces</a>
+          <a class="nav-link active" href="{{ route('parcial1.listFish') }}">Listar Peces</a>< 
+          <a class="nav-link active" href="{{ route('parcial1.fishStatistics') }}">Estadísticas de Peces</a>
         </div>
       </div>
     </div>

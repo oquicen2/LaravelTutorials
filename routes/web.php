@@ -23,4 +23,20 @@ Route::post('/image/save', 'App\Http\Controllers\ImageController@save')->name("i
 Route::get('/image-not-di', 'App\Http\Controllers\ImageNotDIController@index')->name("imagenotdi.index");
 Route::post('/image-not-di/save', 'App\Http\Controllers\ImageNotDIController@save')->name("imagenotdi.save");
 
+// Parcial 1
+// Ruta para la vista inicial (home)
+//Route::get('/parcial1', 'App\Http\Controllers\Parcial1Controller@home')->name('parcial1.home');
+
+// Ruta para mostrar el formulario de registro de peces
+Route::get('/register-fish', 'App\Http\Controllers\Parcial1Controller@registerFish')->name('parcial1.registerFish');
+
+// Ruta para procesar el formulario y guardar los datos en la base de datos
+Route::post('/register-fish/save', 'App\Http\Controllers\Parcial1Controller@saveFish')->name('parcial1.saveFish');
+
+Route::get('/list-fish', 'App\Http\Controllers\Parcial1Controller@listFish')->name('parcial1.listFish');
+
+
+// Ruta para estadísticas de peces
+Route::get('/fish-statistics', 'App\Http\Controllers\Parcial1Controller@fishStatistics')->name('parcial1.fishStatistics');
+
 

@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Collection;
 
 class Fish extends Model
 {
@@ -18,6 +17,7 @@ class Fish extends Model
      * $this->attributes['weight'] - float - contiene el peso del pez
      */
     protected $table = 'fishes';
+
     protected $fillable = ['name', 'species', 'weight'];
 
     // Métodos getters y setters para cada atributo del modelo

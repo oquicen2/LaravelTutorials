@@ -1,18 +1,29 @@
 @extends('layouts.app')
-@section('title', $viewData["title"])
-@section('subtitle', $viewData["subtitle"])
+
 @section('content')
-<div class="row">
-  @foreach ($viewData["products"] as $product)
-  <div class="col-md-4 col-lg-3 mb-2">
-    <div class="card">
-      <img src="https://laravel.com/img/logotype.min.svg" class="card-img-top img-card">
-      <div class="card-body text-center">
-        <a href="{{ route('product.show', ['id'=> $product["id"]]) }}"
-          class="btn bg-primary text-white">{{ $product["name"] }}</a>
-      </div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">{{ $viewData['title'] }}</div>
+
+                <div class="card-body">
+                    <h5>{{ $viewData['subtitle'] }}</h5>
+                    
+                    @if (count($viewData['products']) > 0)
+                        <ul class="list-group mt-3">
+                            @foreach ($viewData['products'] as $product)
+                                <li class="list-group-item">
+                                    <strong>{{ $product->name }}</strong> - ${{ $product->price }}
+                                </li>
+                            @endforeach
+                        </ul>
+                    @else
+                        <p>No products available.</p>
+                    @endif
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-  @endforeach
 </div>
 @endsection

@@ -1,11 +1,16 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+
+
 
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home.index');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
 Route::get('/products', 'App\Http\Controllers\ProductController@index')->name('product.index');
 Route::get('/products/create', 'App\Http\Controllers\ProductController@create')->name('product.create');
 Route::post('/products/save', 'App\Http\Controllers\ProductController@save')->name('product.save');
@@ -32,3 +37,6 @@ Route::post('/register-fish/save', 'App\Http\Controllers\Parcial1Controller@save
 Route::get('/list-fish', 'App\Http\Controllers\Parcial1Controller@listFish')->name('parcial1.listFish');
 
 Route::get('/fish-statistics', 'App\Http\Controllers\Parcial1Controller@fishStatistics')->name('parcial1.fishStatistics');
+
+
+Auth::routes();
